@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Flask ML Service</title>
+</head>
+<body>
+	<nav>
+		<ul>
+			{% if session.logged_in %}
+			<li><a href="/upload">Upload</li>
+			<li><a href="/grade">Report</a></li>
+			<li><a href="/logout">Logout</a></li>
+			{% else %}
+			<li><a href="/login">Login</a></li>
+			{% endif %}
+		</ul>
+	</nav>
+	<h1>Welcome to FlaskML Service</h1>
+	{% if session.logged_in %}
+	<p>Hello, {{ session.username }}!</p>
+	{% else %}
+	<p>You are not logged in.</p>
+	{% endif %}
+</body>
+</html>
